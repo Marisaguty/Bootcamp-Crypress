@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generar-reporte": "allure generate allure-results -o  allure-report --clean"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.17.3"
+    "allure-commandline": "^2.22.1"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.39.1",
+    "cypress": "^12.13.0"
   }
 }
