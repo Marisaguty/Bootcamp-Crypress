@@ -1,4 +1,4 @@
-import { HomeElements } from "./pages/home/home.elements"
+
 import { HomeMethods } from "./pages/home/home.methods"
 
 describe('Clickar productos', ()=>{
