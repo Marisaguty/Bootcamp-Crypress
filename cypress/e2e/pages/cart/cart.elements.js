@@ -2,7 +2,7 @@ export class CartElements{
     static get buttons(){
         return {
             get placeOrder(){
-                return cy.contains('a', 'Add to cart')
+                return cy.contains('button', 'Place Order')
             }
         }
     }
