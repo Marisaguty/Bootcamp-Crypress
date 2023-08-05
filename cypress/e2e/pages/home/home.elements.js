@@ -16,6 +16,6 @@ export class HomeElements{
     }
 
     static product(productName){
-        return cy.contains('a', productName)
+        return cy.contains('a', productName, {timeout: 10000})
     }
 }
