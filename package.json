@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generar-reporte": "allure generate allure-results -o  allure-report --clean"
+    "ejecutar-pruebas": "cypress run --headed --env",
+    "generar-reporte": "allure generate allure-results -o  allure-report --clean",
+    "cy:parallel" : "cypress-parallel -s ejecutar-pruebas -t 2 -d ./cypress/e2e/test"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "allure-commandline": "^2.22.1"
+    "allure-commandline": "^2.22.1",
+    "cypress-parallel": "^0.13.0"
   },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.39.1",

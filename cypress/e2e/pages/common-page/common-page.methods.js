@@ -4,7 +4,11 @@ import { CommonpageElements } from "./common-page.elements";
 export class CommonpageMethods{
 
     static navigateToDemoBlaze(){
+        cy.clearAllCookies()
+        //estas tres líneas son para corregir posibles errores
+        cy.clearAllLocalStorage()
         cy.visit(CommonpageData.url)
+        CommonpageMethods.clickOnHomeOption()
     }
 
     static clickOnHomeOption(){
@@ -58,5 +62,13 @@ export class CommonpageMethods{
 
     static verifySignedUser(username){
         CommonpageElements.signedUser.should('have.text', `Welcome ${username}`)
+    }
+
+    static logout(){
+        cy.get('body').then($body=>{
+            if($body.find('#logout2[style="display: block;"]').length>0){
+                CommonpageElements.topMenu.logout.click({force:true});
+            }
+        })
     }
 }

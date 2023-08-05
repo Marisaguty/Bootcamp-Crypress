@@ -20,7 +20,7 @@ describe(CommonpageData.testSuites.catalogoYCompras , ()=>{
         Logger.stepNumber(1)
         Logger.step('Iniciar sesión con un usuario registrado')
         Logger.subStep('Navegar a la web')
-        CommonpageMethods.navigateToDemoBlaze()
+        /* CommonpageMethods.navigateToDemoBlaze() */
         Logger.subStep('Click on Login link')
         CommonpageMethods.clickOnLoginOption()
         LoginMethods.login(user.user, user.pass)
@@ -36,13 +36,16 @@ describe(CommonpageData.testSuites.catalogoYCompras , ()=>{
         HomeMethods.verifyProductDisplayed(product1)
         HomeMethods.verifyProductDisplayed(product2)
 
+        Logger.postCondition('LOG OUT')
+        CommonpageMethods.logout()
+
     })
 
     it('Agregar producto al carrito', ()=>{
         Logger.stepNumber(1)
         Logger.step('Iniciar sesión con un usuario registrado')
         Logger.subStep('Navegar a la web')
-        CommonpageMethods.navigateToDemoBlaze()
+        /* CommonpageMethods.navigateToDemoBlaze() */
         Logger.subStep('Click on Login link')
         CommonpageMethods.clickOnLoginOption()
         LoginMethods.login(user.user, user.pass)
@@ -72,14 +75,18 @@ describe(CommonpageData.testSuites.catalogoYCompras , ()=>{
         ProductDetailsMethods.verifyProductAddedMessage()
         CommonpageMethods.clickOnCartOption()
         CartMethods.verifyProductAdded(product3)
+
+        Logger.postCondition('Limpiar carrito y LOG OUT')
+        CartMethods.emptyCart(user.user, user.pass)
+        CommonpageMethods.logout()
         
     })
 
-    it.only('Realizar una compra', ()=>{
+    it('Realizar una compra', ()=>{
         Logger.stepNumber(1)
         Logger.step('Iniciar sesión con un usuario registrado')
         Logger.subStep('Navegar a la web')
-        CommonpageMethods.navigateToDemoBlaze()
+        /* CommonpageMethods.navigateToDemoBlaze() */
         Logger.subStep('Click on Login link')
         CommonpageMethods.clickOnLoginOption()
         LoginMethods.login(user.user, user.pass)
@@ -134,7 +141,6 @@ describe(CommonpageData.testSuites.catalogoYCompras , ()=>{
         Logger.stepNumber(13)
         Logger.step('Verificar que se muestra mensaje de confirmacion y nos redirige a la pagina principal')
         ThankPurchaseMethods.verifyGreenCheckMarkIsDisplayed();
-        cy.wait(3000)
         ThankPurchaseMethods.clickOnOkButton()
         HomeMethods.verifyHomePageIsShow();
 

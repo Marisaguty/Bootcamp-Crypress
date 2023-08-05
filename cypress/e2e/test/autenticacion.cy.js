@@ -4,12 +4,17 @@ import { Logger } from "../utils/logger"
 import { LoginMethods } from "../pages/login/login.methods"
 import { LoginData } from "../pages/login/login.data"
 
+/* beforeEach(()=>{
+    CommonpageMethods.navigateToDemoBlaze()
+}) */
+//Está en support - e2e.js
+
 describe(CommonpageData.testSuites.autenticacion , ()=>{
     it('Inicio de sesión válido', ()=>{
 
         Logger.stepNumber(1)
         Logger.step('Navegar a la pagina de inicio')
-        CommonpageMethods.navigateToDemoBlaze()
+        /* CommonpageMethods.navigateToDemoBlaze() */
 
         Logger.stepNumber(2)
         Logger.step('Hacer click en "Log in" en la barra de navegación')
@@ -26,14 +31,15 @@ describe(CommonpageData.testSuites.autenticacion , ()=>{
         Logger.verification('Verificar que se redirige a la pagina de inicio')
        LoginMethods.verifyWrongPasswordMesage()
 
-
+       Logger.postCondition('LOG OUT')
+        CommonpageMethods.logout()
     })
 
-    it('Inicio de sesión válido', ()=>{
+    it('Inicio de sesión inválido', ()=>{
 
         Logger.stepNumber(1)
         Logger.step('Navegar a la pagina de inicio')
-        CommonpageMethods.navigateToDemoBlaze()
+        /* CommonpageMethods.navigateToDemoBlaze() */
 
         Logger.stepNumber(2)
         Logger.step('Hacer click en "Log in" en la barra de navegación')

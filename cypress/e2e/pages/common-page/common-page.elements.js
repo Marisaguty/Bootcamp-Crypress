@@ -1,5 +1,9 @@
 export class CommonpageElements{
 
+    static get signedUser(){
+        return cy.get('a#nameofuser')
+        
+    }
     static get topMenu(){
         return{
             get home(){
@@ -19,12 +23,13 @@ export class CommonpageElements{
             },
             get singUp(){
                 return cy.get('#signin2')
+            },
+            get logout(){
+                return cy.contains('a', 'Log out')
             }
-        }
+            
     }
 
-    static get signedUser(){
-        return cy.get('a#nameofuser')
-        
-    }
-}
+
+
+}}

@@ -13,7 +13,7 @@ describe(CommonpageData.testSuites.registro, ()=>{
 
         Logger.stepNumber(1)
         Logger.step('Navegar a la pagina de inicio')
-        CommonpageMethods.navigateToDemoBlaze()
+        /* CommonpageMethods.navigateToDemoBlaze() */
 
         Logger.stepNumber(2)
         Logger.step('Hacer click en "Sing up" en la barra de navegación')
@@ -38,7 +38,7 @@ describe(CommonpageData.testSuites.registro, ()=>{
 
         Logger.stepNumber(1)
         Logger.step('Navegar a la pagina de inicio')
-        CommonpageMethods.navigateToDemoBlaze()
+        /* CommonpageMethods.navigateToDemoBlaze() */
 
         Logger.stepNumber(2)
         Logger.step('Hacer click en "Sing up" en la barra de navegación')
