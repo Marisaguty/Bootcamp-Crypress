@@ -8,7 +8,7 @@ export class CommonpageData{
         return{
             registro: 'Registro',
             autenticacion: 'autenticación',
-            catalogoYCompra: 'Catálogo y compra'
+            catalogoYCompras: 'Catálogo y compras'
 
         }
     }
